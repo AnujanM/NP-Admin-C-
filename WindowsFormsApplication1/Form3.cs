@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace WindowsFormsApplication1
                 MySqlCommand cmd = new MySqlCommand(query, cnn);
                 //Execute command
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Connection Open ! ");
+                MessageBox.Show("Connection Open!");
                 cnn.Close();
             }
             catch (Exception ex)
@@ -105,6 +106,52 @@ namespace WindowsFormsApplication1
             catch (Exception ex)
             {
                 MessageBox.Show("Can not make change! ");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) // Check If file is selected.
+            {
+                string file = openFileDialog1.FileName;
+                MySqlConnection cnn;
+                string connetionString = "server=localhost;database=Student;uid=A;pwd=123456;";
+                cnn = new MySqlConnection(connetionString);
+                cnn.Open();
+                Dictionary<string, int> info = new Dictionary<string, int>();
+                string query = "SELECT * From students"; //Grab pre-existing data to find students and points
+                MySqlCommand cmd = new MySqlCommand(query, cnn);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                MessageBox.Show("Connection Open ! ");
+                while (dataReader.Read())
+                {
+                    info.Add(dataReader["studentNumber"] + "", Int32.Parse(dataReader["academicPoints"]+""));
+                }
+                dataReader.Close();
+                try
+                {
+                    string[] text = File.ReadAllLines(file); //Saves into array
+                    foreach(string line in text)
+                    {
+                        if (info.ContainsKey(line))
+                        {
+                            int points = info[line] + 10;
+                            string q = "UPDATE students SET academicPoints='"+ points + "' WHERE studentNumber='" + line + "'";
+                            MySqlCommand cmd1 = new MySqlCommand(q, cnn);
+                            cmd1.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            MessageBox.Show(line + " Does Not Exist");
+                        }
+                    }
+                    cnn.Close();
+                    MessageBox.Show("Done Import");
+                }
+                catch (IOException)
+                {
+                }
             }
         }
     }
