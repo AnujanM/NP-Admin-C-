@@ -45,6 +45,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.extraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importClubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -190,6 +194,31 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.extraToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // extraToolStripMenuItem
+            // 
+            this.extraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importClubToolStripMenuItem});
+            this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
+            this.extraToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.extraToolStripMenuItem.Text = "Extra";
+            // 
+            // importClubToolStripMenuItem
+            // 
+            this.importClubToolStripMenuItem.Name = "importClubToolStripMenuItem";
+            this.importClubToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importClubToolStripMenuItem.Text = "Import Club";
+            this.importClubToolStripMenuItem.Click += new System.EventHandler(this.importClubToolStripMenuItem_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,9 +240,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.Name.Name = "Form3";
             this.Text = "Student Info";
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +270,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem extraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importClubToolStripMenuItem;
     }
 }

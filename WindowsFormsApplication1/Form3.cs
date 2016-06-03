@@ -146,13 +146,18 @@ namespace WindowsFormsApplication1
                             MessageBox.Show(line + " Does Not Exist");
                         }
                     }
-                    cnn.Close();
                     MessageBox.Show("Done Import");
+                    cnn.Close();
                 }
                 catch (IOException)
                 {
                 }
             }
+        }
+        Form4 secondpage = new Form4();
+        private void importClubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            secondpage.Show();
         }
     }
 }

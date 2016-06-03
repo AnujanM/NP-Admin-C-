@@ -12,3 +12,4 @@ C:\Users\Anujan Murugesu\documents\visual studio 2015\Projects\WindowsFormsAppli
 C:\Users\Anujan Murugesu\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
 C:\Users\Anujan Murugesu\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
 C:\Users\Anujan Murugesu\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+C:\Users\Anujan Murugesu\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form4.resources
